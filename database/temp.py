@@ -1,0 +1,1 @@
+# criar uma class para armazenar dados temporariamente
