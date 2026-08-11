@@ -10,3 +10,6 @@ class produtos:
         self.id_fornecedor = id_fornecedor
 
 
+# se valor de atributo não corresponder com seu tipo de restrição
+# não será adicionado na lista tempora
+
