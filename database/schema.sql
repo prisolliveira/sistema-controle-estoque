@@ -39,3 +39,6 @@ CREATE TABLE compras(
     FOREIGN KEY(id_produto) REFERENCES produtos(id),
     FOREIGN KEY(id_fornecedor) REFERENCES fornecedores(id)
 );
+
+ALTER TABLE compras
+MODIFY COLUMN nota_fiscal VARCHAR(20) NOT NULL;
