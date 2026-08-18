@@ -18,19 +18,16 @@ def validar_inteiro(inteiro):
     return inteiro
 
 class Produtos:
-    def __init__(self, nome, preco, id_fornecedor):
+    def __init__(self, nome, preco, quantidade, id_fornecedor):
         self.nome = nome
         self.preco = preco
+        self.quantidade = quantidade
         self.id_fornecedor = id_fornecedor
 
     def adicionar_temp(self):
         nome = validar_texto(self.nome)
         preco = validar_decimal(self.preco)
+        quantidade = validar_inteiro(self.quantidade)
         id_fornecedor = validar_inteiro(self.id_fornecedor)
 
-        temp_produtos.append([nome, preco, id_fornecedor])
-
-produto = Produtos("Esponja", 2.4, 4)
-produto.adicionar_temp()
-
-print(temp_produtos)
+        temp_produtos.append([nome, preco, quantidade, id_fornecedor])
