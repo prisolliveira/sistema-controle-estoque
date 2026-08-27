@@ -13,3 +13,8 @@ def adicionar(tabela, lista, colunas):
     query = f"INSERT INTO {tabela} ({colunas_str}) VALUES ({placeholders})"
     cursor.executemany(query, lista)
     conexao.commit()
+
+def remover(tabela, id):
+    query = f"DELETE FROM {tabela} WHERE id = {id}"
+    cursor.execute(query)
+    conexao.commit()
