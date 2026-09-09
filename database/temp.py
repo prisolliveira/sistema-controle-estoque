@@ -1,4 +1,7 @@
+import src.queries as qs
+
 temp_produtos = list()
+temp_vendas = list()
 
 def validar_texto(texto):
     if type(texto) is not str:
@@ -31,3 +34,24 @@ class Produtos:
         id_fornecedor = validar_inteiro(self.id_fornecedor)
 
         temp_produtos.append([nome, preco, quantidade, id_fornecedor])
+
+
+class Vendas:
+    def __init__(self, id_produto, quantidade, data_venda, cliente):
+        self.id_produto = id_produto
+        self.quantidade = quantidade
+        self.data_venda = data_venda
+        self.cliente = cliente
+
+    def adicionar_temp(self):  
+        id_produto = validar_inteiro(self.id_produto)
+        quantidade = validar_inteiro(self.quantidade)
+
+        preco = float(qs.encontrar("produtos", "id", self.id_produto))
+        preco_total = preco * quantidade
+
+        data_venda = validar_texto(self.data_venda)
+        cliente = validar_inteiro(self.cliente)
+
+        temp_vendas.append([id_produto, quantidade, preco, 
+                           preco_total, data_venda, cliente])
