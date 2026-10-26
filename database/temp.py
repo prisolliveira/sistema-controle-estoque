@@ -1,4 +1,5 @@
 import src.queries as qs
+from datetime import datetime
 
 temp_produtos = list()
 temp_vendas = list()
@@ -50,8 +51,10 @@ class Vendas:
         preco = float(qs.encontrar("produtos", "id", self.id_produto))
         preco_total = preco * quantidade
 
-        data_venda = validar_texto(self.data_venda)
+        data_venda = datetime.strptime(self.data_venda, "%d/%m/%Y").date()
         cliente = validar_inteiro(self.cliente)
 
         temp_vendas.append([id_produto, quantidade, preco, 
                            preco_total, data_venda, cliente])
+
+        

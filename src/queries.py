@@ -28,10 +28,8 @@ def encontrar(tabela, id_tabela, id_valor):
         return None
 
 
-def venda(id_produto, quant, cliente):
-    from database.temp import temp_vendas
-    adicionar("vendas", temp_vendas)
+    
 
 
-# ANOTAÇÕES
-# Não é possível fazer com que dois arquivos dependam um do outro.
+
+
